@@ -14,7 +14,7 @@ def main():
     yMod = int(args.ymod)
 
     #fill array [w,h,3] with random values between 0 and 255
-    arr = np.random.rand(width % 7, height % 7, 3) * 255
+    arr = np.random.rand(width % xMod, height % yMod, 3) * 255
 
     #create an image from those values
     img = Image.fromarray(arr.astype('uint8')).convert('RGBA')
