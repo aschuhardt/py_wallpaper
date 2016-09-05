@@ -38,8 +38,10 @@ def main():
     msg += " height=" + str(height)
     msg += " radius=" + str(radius)
     msg += " xMod=" + str(xMod)
+    msg += " (width%xMod=" + str(width % xMod) + ")"
     msg += " yMod=" + str(yMod)
-    
+    msg += " (height%yMod=" + str(height % yMod) + ")"
+     
     print(msg)
 
 def getArgs():
