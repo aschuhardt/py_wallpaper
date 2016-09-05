@@ -14,7 +14,9 @@ def main():
     yMod = int(args.ymod)
 
     #fill array [w,h,3] with random values between 0 and 255
-    arr = np.random.rand(width % xMod, height % yMod, 3) * 255
+    baseWidth = width % xMod
+    baseHeight = height % yMod
+    arr = np.random.rand(baseWidth, baseHeight , 3) * 255
 
     #create an image from those values
     img = Image.fromarray(arr.astype('uint8')).convert('RGBA')
@@ -27,11 +29,18 @@ def main():
 
     #save image
     img.save(filename)
-
-def printUsage():
-    #prints usage information
-    s = "Usage: \"python makewalpaper.py filename width height [radius [modX [modY]]]\""
-    print(s)
+    
+    #print debug info
+    msg =  "Created new wallpaper image "
+    msg += "at " + filename
+    msg += " with parmeters:"
+    msg += " width=" + str(width)
+    msg += " height=" + str(height)
+    msg += " radius=" + str(radius)
+    msg += " xMod=" + str(xMod)
+    msg += " yMod=" + str(yMod)
+    
+    print(msg)
 
 def getArgs():
     #set up parser for command-line arguments
@@ -43,7 +52,6 @@ def getArgs():
     parser.add_argument("xmod", default=7, nargs="?")
     parser.add_argument("ymod", default=7, nargs="?")
     return parser.parse_args()
-
 
 if __name__ == "__main__":
     main()
