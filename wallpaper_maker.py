@@ -55,7 +55,7 @@ def getArgs():
     parser.add_argument("filename")
     parser.add_argument("width")
     parser.add_argument("height")
-    parser.add_argument("radius", default=64, nargs="?")
+    parser.add_argument("radius", default=128, nargs="?")
     return parser.parse_args()
 
 if __name__ == "__main__":
