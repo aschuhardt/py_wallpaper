@@ -11,7 +11,7 @@ while true; do
 	fi
 
 	#run the script to generate a new image
-	/bin/python3.5 /home/aschuhardt/py_wallpaper/wallpaper_maker.py $filename 1366 768 64 6 7 
+	/bin/python3.5 /home/aschuhardt/py_wallpaper/wallpaper_maker.py $filename 1366 768
 
 	#set the new image as wallpaper
 	feh --bg-center $filename
