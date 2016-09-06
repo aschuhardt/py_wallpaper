@@ -10,6 +10,8 @@ def main():
     width = int(args.width)
     height = int(args.height)
     radius = int(args.radius)
+
+    #calculate x/y modulo values (k where n % k > 2)
     xMod = getMod(width)
     yMod = getMod(height)
 
