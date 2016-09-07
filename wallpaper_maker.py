@@ -21,7 +21,11 @@ def main():
     baseHeight = height % yMod
 
     #choose a random base color
-    baseColor = getRandColor()
+    baseColor = []
+    try:
+        baseColor = hex_to_rgb(args.basecolor)
+    except:
+        baseColor = getRandColor()
 
     #fill a w*h*3 array with the base color
     arr = np.full((baseWidth, baseHeight, 3), baseColor, dtype=int)
@@ -90,6 +94,11 @@ def getMod(n):
         if n % k > 2:
             return k
 
+def hex_to_rgb(value):
+    value = value.lstrip('#')
+    lv = len(value)
+    return np.asarray(tuple(int(value[i:i + lv // 3], 16) for i in range(0, lv, lv // 3)))
+
 def offsetColor(n, offset):
     n += offset
     if n > 255:
@@ -107,6 +116,7 @@ def getArgs():
     parser.add_argument("-t", "--height", nargs="?", type=int, default=768, help="The image height")
     parser.add_argument("-r", "--radius", nargs="?", type=int, default=128, help="The radius of the Gaussian blur pass")
     parser.add_argument("-o", "--offset", nargs="?", type=int, default=50, help="The max amount each pixel's color channels will be offset")
+    parser.add_argument("-c", "--basecolor", nargs="?", type=str, default="", help="A hexidecimal (#FFFFFF) representation of a color to use as the image's base")
     return parser.parse_args()
 
 def getRandColor():
