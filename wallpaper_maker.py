@@ -1,3 +1,11 @@
+"""
+A simple desktop wallpaper generator written by Addison Schuhardt.
+
+This script is designed to generate color gradient-pattern desktop wallpaper images.
+This script is available for use and redistribution under the terms of the GNU General Public License v.3.
+Information regarding and changes to this script can be found here: https://github.com/aschuhardt/py_wallpaper
+"""
+
 import sys
 import numpy as np
 import argparse
