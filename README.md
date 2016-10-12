@@ -1,2 +1,18 @@
 # py_wallpaper
-A script written in Python to generate colorful gradient-pattern wallpapers.
+A simple python script that generates colorful gradient-pattern wallpapers. I have it called in my .xinitrc to run and pass its output into Feh.
+
+Requirements: Python 3.5, PIL (Pillow), Numpy, Argparse
+
+Arguments:
+
+-f --filename file_path (default ./output.png): The path of the desired output file.
+
+-w --width some_integer (default 1366): The width of the final image.
+
+-t --height some_integer (default 768): The height of the final image.
+
+-r --radius some_integer (default 128): The radius of the Gaussian blur pass.
+
+-o --offset some_integer (default 50): The maximum amount each channel of the base color will be offset (RGB). Higher = more color variation.
+
+-c --basecolor <hexidecimal RGB string (i.e. "#FFFFFF")> (default randomly chosen): The base color that will be used to generate the image.
