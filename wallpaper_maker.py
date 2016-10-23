@@ -1,3 +1,4 @@
+#!/bin/python3.5
 """
 A simple desktop wallpaper generator written by Addison Schuhardt.
 
