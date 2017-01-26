@@ -1,6 +1,8 @@
 #!/bin/python3.5
 """
 A simple desktop wallpaper generator written by Addison Schuhardt.
+https://schuhardt.net
+Contact: a@schuhardt.net
 
 This script is designed to generate color gradient-pattern desktop wallpaper images.
 This script is available for use and redistribution under the terms of the GNU General Public License v.3.
@@ -104,11 +106,14 @@ def getMod(n):
             return k
 
 def hex_to_rgb(value):
+    #converts a hexidecimal representation of a color to a 3-tuple
+    #   representing its RGB counterpart
     value = value.lstrip('#')
     lv = len(value)
     return np.asarray(tuple(int(value[i:i + lv // 3], 16) for i in range(0, lv, lv // 3)))
 
 def offsetColor(n, offset):
+    #offsets the given RGB value (n) by the given amount (offset)
     n += offset
     if n > 255:
         return 255
@@ -129,6 +134,7 @@ def getArgs():
     return parser.parse_args()
 
 def getRandColor():
+    #returns a random value between 0 and 255
     arr = np.random.rand(3) * 255
     return arr.astype(dtype=int)
 
