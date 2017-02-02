@@ -1,6 +1,9 @@
 # py_wallpaper
 A simple python script that generates colorful gradient-pattern wallpapers. I have it called in my .xinitrc to run and pass its output into Feh.
 
+Example output:
+![This is an example of what the script's output looks like using the default parameters](https://raw.githubusercontent.com/aschuhardt/py_wallpaper/master/output.png)
+
 Requirements: Python 3.5 (3 will likely work), PIL (Pillow), Numpy, Argparse
 
 Instructions:
