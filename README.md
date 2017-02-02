@@ -29,4 +29,4 @@ Arguments:
 
 -o --offset some_integer (default 50): The maximum amount each channel of the base color will be offset (RGB). Higher = more color variation.
 
--c --basecolor <hexidecimal RGB string (i.e. "#FFFFFF")> (default randomly chosen): The base color that will be used to generate the image.
+-c --basecolor (hexidecimal RGB string (i.e. "#FFFFFF")) (default randomly chosen): The base color that will be used to generate the image.
